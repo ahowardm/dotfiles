@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# iwctl-connect
+# Uso: iwctl-connect "SSID"
+
+if [ $# -lt 1 ]; then
+  echo "Uso: $(basename "$0") \"SSID\""
+  exit 1
+fi
+
+SSID="$1"
+
+if ! command -v iwctl >/dev/null 2>&1; then
+  echo "ERROR: iwctl no está instalado o no está en el PATH." >&2
+  exit 2
+fi
+
+detect_iface() {
+  # Detectar interfaz wireless válida
+  for iface in /sys/class/net/*; do
+    iface=$(basename "$iface")
+    [ -d "/sys/class/net/$iface/wireless" ] && echo "$iface" && return 0
+  done
+  return 1
+}
+
+IFACE="${IW_IFACE:-$(detect_iface || true)}"
+if [ -z "$IFACE" ]; then
+  echo "No se detectó interfaz Wi-Fi automáticamente." >&2
+  exit 3
+fi
+
+echo "Usando interfaz: $IFACE"
+iwctl station "$IFACE" scan >/dev/null 2>&1 || true
+sleep 1
+
+is_known_network() {
+  # 1️⃣ Revisión directa de iwctl known-networks
+  if iwctl known-networks list 2>/dev/null | grep -F -x "$SSID" >/dev/null 2>&1; then
+    return 0
+  fi
+  if iwctl known-networks list 2>/dev/null | grep -F "$SSID" >/dev/null 2>&1; then
+    return 0
+  fi
+
+  # 2️⃣ Buscar archivo en /var/lib/iwd/
+  if [ -d /var/lib/iwd ]; then
+    if ls "/var/lib/iwd/$SSID."* >/dev/null 2>&1; then
+      return 0
+    fi
+  fi
+
+  return 1
+}
+
+if is_known_network; then
+  echo "✅ La red '$SSID' ya está guardada. Intentando conectar sin pedir contraseña..."
+  if iwctl station "$IFACE" connect "$SSID"; then
+    echo "Conectado a '$SSID'."
+    exit 0
+  else
+    echo "Fallo al conectar aunque la red estaba guardada. Se intentará de nuevo con contraseña..." >&2
+  fi
+else
+  echo "ℹ️ La red '$SSID' no está guardada. Intentaré conectarla."
+fi
+
+# Si no estaba guardada o falló
+if iwctl station "$IFACE" connect "$SSID" >/dev/null 2>&1; then
+  echo "Conectado a '$SSID' (red abierta o ya configurada)."
+  exit 0
+fi
+
+read -r -s -p "Contraseña para '$SSID': " PASS
+echo
+if [ -z "$PASS" ]; then
+  echo "No se ingresó contraseña. Abortando." >&2
+  exit 4
+fi
+
+if printf "%s\n" "$PASS" | iwctl station "$IFACE" connect "$SSID"; then
+  echo "Conectado a '$SSID'."
+else
+  echo "❌ No se pudo conectar a '$SSID'." >&2
+  exit 5
+fi
+

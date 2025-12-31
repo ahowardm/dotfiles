@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Workspace 2 - Mails
+hyprctl dispatch workspace 2
+chromium --new-window \
+  "https://gmail.com" \
+  "https://mail.google.com/mail/u/1/#inbox" \
+  "https://mail.google.com/mail/u/2/#inbox" \
+  "https://mail.google.com/chat/u/2/#chat/home" &
+sleep 1
+
+# Workspace 2 - Comunicación
+hyprctl dispatch workspace 3
+chromium --new-window \
+  "https://calendar.google.com/calendar/u/0/r/week?pli=1" \
+  "https://calendar.google.com/calendar/u/2/r?pli=1" &
+sleep 1
+
+# Workspace 4 - Whatsapp
+hyprctl dispatch workspace 4
+chromium --new-window \
+  --app=https://web.whatsapp.com &
+sleep 1
+
+# Volver al workspace 1
+hyprctl dispatch workspace 2
