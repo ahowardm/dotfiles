@@ -1,0 +1,6 @@
+[Unit]
+Description=Battery alerts for Hyprland
+
+[Service]
+ExecStart=%h/.config/hypr/scripts/battery_alert.sh
+

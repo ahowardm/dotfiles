@@ -17,3 +17,9 @@ sudo pacman -S --needed --noconfirm - <pacman-pkgs.txt
 yay -S --needed --noconfirm - <aur-pkgs.txt
 
 echo "Configurando dotfiles"
+stow hypr
+stow mise
+stow waybar
+stow wofi
+stow systemd
+stow starship

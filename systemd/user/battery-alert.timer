@@ -1,0 +1,11 @@
+[Unit]
+Description=Run battery alert script every 30 seconds
+
+[Timer]
+OnBootSec=15s
+OnUnitActiveSec=30s
+Unit=battery-alert.service
+
+[Install]
+WantedBy=default.target
+
