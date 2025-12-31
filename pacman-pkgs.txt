@@ -11,6 +11,7 @@ nvim
 wofi
 chromium
 yazi
+openssh
 waybar
 mise
 brightnessctl
