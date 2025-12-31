@@ -1,0 +1,9 @@
+hyprshot
+swaync
+hyprlock
+hypridle
+stow
+hyprpaper
+starship
+typora
+
