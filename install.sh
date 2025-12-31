@@ -23,5 +23,6 @@ stow waybar
 stow wofi
 stow systemd
 stow starship
+stow nvim
 
 systemctl --user enable --now battery-alert.timer:wofi
