@@ -23,3 +23,5 @@ stow waybar
 stow wofi
 stow systemd
 stow starship
+
+systemctl --user enable --now battery-alert.timer:wofi
