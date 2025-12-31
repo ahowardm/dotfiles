@@ -22,3 +22,7 @@ libre-office-fresh
 rsync
 zoxide
 vim
+libyaml
+openssl
+readline
+zlib
