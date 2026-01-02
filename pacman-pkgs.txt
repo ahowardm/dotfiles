@@ -32,3 +32,4 @@ bluez
 bluez-utils
 hunspell
 cmake
+ripgrep
