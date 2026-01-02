@@ -28,3 +28,5 @@ readline
 zlib
 discord
 poppler
+bluez
+bluez-utils

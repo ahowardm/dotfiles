@@ -26,3 +26,4 @@ stow starship
 stow nvim
 
 systemctl --user enable --now battery-alert.timer:wofi
+sudo systemctl enable --now bluetooth.service
