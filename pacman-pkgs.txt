@@ -26,3 +26,4 @@ libyaml
 openssl
 readline
 zlib
+discord
