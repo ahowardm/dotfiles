@@ -27,3 +27,4 @@ openssl
 readline
 zlib
 discord
+poppler
