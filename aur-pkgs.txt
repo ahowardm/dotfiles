@@ -6,4 +6,4 @@ stow
 hyprpaper
 starship
 typora
-
+spotify
