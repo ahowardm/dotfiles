@@ -33,3 +33,5 @@ bluez-utils
 hunspell
 cmake
 ripgrep
+networkmanager
+wpa_supplicant

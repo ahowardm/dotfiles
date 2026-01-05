@@ -27,3 +27,6 @@ stow nvim
 
 systemctl --user enable --now battery-alert.timer:wofi
 sudo systemctl enable --now bluetooth.service
+sudo systemctl stop iwd
+sudo systemctl disable iwd
+sudo systemctl enable --now NetworkManager
