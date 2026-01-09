@@ -30,3 +30,6 @@ sudo systemctl enable --now bluetooth.service
 sudo systemctl stop iwd
 sudo systemctl disable iwd
 sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now tlp.service
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket
