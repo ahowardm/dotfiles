@@ -36,3 +36,4 @@ ripgrep
 networkmanager
 wpa_supplicant
 tlp
+reflector
