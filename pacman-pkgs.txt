@@ -34,6 +34,7 @@ hunspell
 cmake
 ripgrep
 networkmanager
+wireless-regdb
 wpa_supplicant
 tlp
 reflector
