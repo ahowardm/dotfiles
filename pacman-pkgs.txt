@@ -38,3 +38,4 @@ wireless-regdb
 wpa_supplicant
 tlp
 reflector
+7zip
