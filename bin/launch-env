@@ -22,13 +22,7 @@ chromium --new-window \
   --app=https://web.whatsapp.com &
 sleep 1
 
-hyprctl dispatch workspace 6
-chromium --new-window \
-  "https://lookerstudio.google.com/u/2/reporting/3befb0a5-6cdd-400f-8482-1a87f9249c83/page/LX8nF" \
-  "https://lookerstudio.google.com/u/2/reporting/ea80e737-d86c-4d29-ad44-0da89d8de184/page/p_eiia4bw8rd" \
-  "https://lookerstudio.google.com/u/2/reporting/97a2c544-13e6-48a9-a4b3-63e947c2c331/page/tEnnC" \
-  "https://lookerstudio.google.com/u/2/reporting/778295c7-e0d2-4bad-a78a-348f011033d9/page/p_vcfjsn1sqd" &
-sleep 1
+./launch-stats
 
 # Volver al workspace 1
 hyprctl dispatch workspace 2
