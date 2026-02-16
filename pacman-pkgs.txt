@@ -39,3 +39,5 @@ wpa_supplicant
 tlp
 reflector
 7zip
+pavucontrol
+rtkit
