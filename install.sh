@@ -54,3 +54,6 @@ sudo systemctl mask systemd-rfkill.socket
 
 # Timer semanal (usa reflector.conf)
 sudo systemctl enable --now reflector.timer
+
+# Permitir cerrar la tapa del laptop con dock/monitor externo sin suspender
+sudo sed -i 's/#HandleLidSwitchDocked=ignore/HandleLidSwitchDocked=ignore/' /etc/systemd/logind.conf
