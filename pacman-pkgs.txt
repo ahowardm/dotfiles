@@ -42,3 +42,4 @@ reflector
 tmux
 pavucontrol
 rtkit
+bolt
