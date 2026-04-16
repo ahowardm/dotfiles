@@ -7,3 +7,4 @@ hyprpaper
 starship
 typora
 spotify
+acli-bin
