@@ -36,6 +36,11 @@ echo "Instalando paquetes pacman"
 sudo pacman -S --needed --noconfirm - <pacman-pkgs.txt
 yay -S --needed --noconfirm - <aur-pkgs.txt
 
+if ! command -v sentry-cli &>/dev/null; then
+  echo "Instalando sentry-cli"
+  curl -fsS https://cli.sentry.dev/install | sh
+fi
+
 echo "Configurando dotfiles"
 stow hypr
 stow mise
