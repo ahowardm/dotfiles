@@ -44,3 +44,4 @@ tmux
 pavucontrol
 rtkit
 bolt
+clang
