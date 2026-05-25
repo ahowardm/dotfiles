@@ -45,3 +45,4 @@ pavucontrol
 rtkit
 bolt
 clang
+tree-sitter-cli
