@@ -4,6 +4,7 @@ noto-fonts-cjk
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
 ttf-cascadia-code-nerd
+ttf-meslo-nerd
 hyprland
 git
 base-devel
