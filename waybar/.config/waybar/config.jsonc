@@ -2,7 +2,15 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "pulseaudio", "battery"],
+  "modules-right": ["custom/hdmi", "network", "pulseaudio", "battery"],
+  "custom/hdmi": {
+    "exec": "~/.config/waybar/scripts/hdmi-res.sh",
+    "return-type": "json",
+    "interval": 5,
+    "signal": 8,
+    "on-click": "~/.config/hypr/scripts/hdmi-toggle.sh",
+    "tooltip": true
+  },
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
