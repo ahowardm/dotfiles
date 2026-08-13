@@ -7,9 +7,14 @@
   // Hyprland rechaza con config Lua: la evalua como "return hl.dispatch(workspace N)".
   // ext/workspaces usa el protocolo ext_workspace_manager_v1 y no pasa por hyprctl.
   // El on-click es obligatorio: sin el, el modulo no hace nada al clickear.
+  // sort-by-id tiene precedencia sobre sort-by-name, pero Hyprland no manda el evento
+  // "id" de ext_workspace_handle_v1 (es opcional en el protocolo): todos los workspaces
+  // quedan con id vacio y el orden termina siendo el de llegada del compositor.
+  // sort-by-name ordena numericamente cuando todos los nombres son numeros.
   "ext/workspaces": {
     "format": "{name}",
-    "sort-by-id": true,
+    "sort-by-id": false,
+    "sort-by-name": true,
     "on-click": "activate"
   },
   "custom/hdmi": {
