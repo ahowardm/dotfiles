@@ -1,8 +1,17 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["ext/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["custom/hdmi", "network", "pulseaudio", "battery"],
+  // hyprland/workspaces manda "dispatch workspace N" (sintaxis vieja) por IPC, que
+  // Hyprland rechaza con config Lua: la evalua como "return hl.dispatch(workspace N)".
+  // ext/workspaces usa el protocolo ext_workspace_manager_v1 y no pasa por hyprctl.
+  // El on-click es obligatorio: sin el, el modulo no hace nada al clickear.
+  "ext/workspaces": {
+    "format": "{name}",
+    "sort-by-id": true,
+    "on-click": "activate"
+  },
   "custom/hdmi": {
     "exec": "~/.config/waybar/scripts/hdmi-res.sh",
     "return-type": "json",
