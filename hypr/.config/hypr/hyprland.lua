@@ -15,6 +15,26 @@ hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "auto-right"
 hl.monitor({ output = "desc:GWD ARZOPA", mode = "1920x1080@60", position = "auto-left", scale = 1 })
 hl.monitor({ output = "desc:LG Electronics LG HDR WQHD", mode = "3440x1440@60", position = "auto-right", scale = 1 })
 
+-- Al conectar el LG en caliente, Hyprland reparte los workspaces entre los
+-- monitores disponibles y varios quedan en el laptop. Este hook los devuelve
+-- todos al LG, que es lo mismo que hacia a mano el loop de hyprctl dispatch.
+local mainDisplay = "desc:LG Electronics LG HDR WQHD"
+
+local function claimWorkspaces(monitor)
+  for i = 1, 9 do
+    hl.dispatch(hl.dsp.workspace.move({ workspace = i, monitor = monitor }))
+  end
+end
+
+hl.on("monitor.added", function(added)
+  local main = hl.get_monitor(mainDisplay)
+  if not main or main.name ~= added.name then return end
+
+  -- Medio segundo de gracia: al momento del evento el monitor recien aparece y
+  -- Hyprland todavia le esta asignando su workspace inicial.
+  hl.timer(function() claimWorkspaces(mainDisplay) end, { timeout = 500, type = "oneshot" })
+end)
+
 
 ---------------------
 ---- MY PROGRAMS ----
