@@ -1,5 +1,6 @@
 [tools]
 go = "latest"
+herdr = "latest"
 node = "latest"
 python = "latest"
 ruby = "latest"
