@@ -7,7 +7,7 @@
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1.67 })
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1.3333333 })
 
 -- HDMI-A-1: default 1080p. Para proyectores viejos que solo soportan 720p
 -- usar SUPER+SHIFT+P (scripts/hdmi-toggle.sh), no hace falta editar esto.
