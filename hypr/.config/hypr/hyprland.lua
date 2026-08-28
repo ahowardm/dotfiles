@@ -169,7 +169,7 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({
   dwindle = {
-    preserve_split = true,     -- You probably want this
+    preserve_split = true, -- You probably want this
   },
 
   -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
@@ -178,8 +178,8 @@ hl.config({
   },
 
   misc = {
-    force_default_wallpaper = -1,        -- Set to 0 or 1 to disable the anime mascot wallpapers
-    disable_hyprland_logo   = false,     -- If true disables the random hyprland logo / anime girl background. :(
+    force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
   },
 })
 
@@ -198,7 +198,7 @@ hl.config({
 
     follow_mouse = 1,
 
-    sensitivity  = 0,    -- -1.0 - 1.0, 0 means no modification.
+    sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
 
     touchpad     = {
       natural_scroll = true,
@@ -233,8 +233,8 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(modShift .. " + l", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())             -- dwindle
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))       -- dwindle
+hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())       -- dwindle
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle
 
 -- Webapps
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
@@ -270,7 +270,7 @@ hl.bind(modAlt .. " + l", hl.dsp.window.swap({ direction = "right" }))
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
-  local key = i % 10   -- 10 maps to key 0
+  local key = i % 10 -- 10 maps to key 0
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
   hl.bind(modShift .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end
