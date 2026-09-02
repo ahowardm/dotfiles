@@ -8,7 +8,7 @@ ttf-meslo-nerd
 hyprland
 git
 base-devel
-nvim
+neovim
 wofi
 chromium
 yazi
@@ -19,7 +19,7 @@ brightnessctl
 pamixer
 postgresql
 discord
-libre-office-fresh
+libreoffice-fresh
 rsync
 zoxide
 vim
@@ -27,7 +27,6 @@ libyaml
 openssl
 readline
 zlib
-discord
 poppler
 bluez
 bluez-utils
