@@ -28,6 +28,14 @@ openssl
 readline
 zlib
 poppler
+libvips
+libheif
+poppler-glib
+imagemagick
+openslide
+ffmpeg
+rav1e
+svt-av1
 bluez
 bluez-utils
 hunspell
