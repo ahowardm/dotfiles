@@ -20,6 +20,8 @@ pamixer
 postgresql
 discord
 libreoffice-fresh
+libreoffice-fresh-es
+hunspell-es_cl
 rsync
 zoxide
 vim
