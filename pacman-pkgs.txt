@@ -9,7 +9,6 @@ hyprland
 git
 base-devel
 neovim
-wofi
 chromium
 yazi
 openssh

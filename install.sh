@@ -45,12 +45,11 @@ echo "Configurando dotfiles"
 stow hypr
 stow mise
 stow waybar
-stow wofi
 stow systemd
 stow starship
 stow nvim
 
-systemctl --user enable --now battery-alert.timer:wofi
+systemctl --user enable --now battery-alert.timer
 sudo systemctl enable --now bluetooth.service
 ./network.sh
 sudo systemctl enable --now tlp.service
