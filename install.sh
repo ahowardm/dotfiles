@@ -54,6 +54,7 @@ sudo systemctl enable --now bluetooth.service
 ./network.sh
 sudo systemctl enable --now tlp.service
 sudo systemctl enable --now docker.socket
+sudo systemctl enable --now cups.socket
 sudo usermod -aG docker "$USER"
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket

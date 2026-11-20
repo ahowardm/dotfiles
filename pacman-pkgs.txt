@@ -60,3 +60,5 @@ wl-clipboard
 docker
 docker-compose
 docker-buildx
+cups
+ghostscript
