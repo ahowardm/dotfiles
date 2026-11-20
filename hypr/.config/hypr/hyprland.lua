@@ -42,7 +42,7 @@ end)
 
 local terminal    = "ghostty"
 local fileManager = "ghostty -e yazi"
-local menu        = "wofi --show drun"
+local menu        = "walker"
 local browser     = "brave"
 
 
@@ -52,7 +52,7 @@ local browser     = "brave"
 
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
-  hl.exec_cmd("waybar & swaync & hypridle & hyprpaper")
+  hl.exec_cmd("waybar & swaync & hypridle & hyprpaper & elephant & walker --gapplication-service")
 end)
 
 

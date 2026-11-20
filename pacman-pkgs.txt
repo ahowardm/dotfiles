@@ -56,3 +56,5 @@ rtkit
 bolt
 clang
 tree-sitter-cli
+libqalculate
+wl-clipboard

@@ -9,3 +9,7 @@ typora
 spotify
 acli-bin
 brave-bin
+walker
+elephant
+elephant-desktopapplications
+elephant-calc
