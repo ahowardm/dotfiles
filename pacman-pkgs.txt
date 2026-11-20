@@ -57,3 +57,6 @@ clang
 tree-sitter-cli
 libqalculate
 wl-clipboard
+docker
+docker-compose
+docker-buildx
